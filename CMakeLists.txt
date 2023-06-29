@@ -4,9 +4,6 @@ cmake_minimum_required(VERSION 3.14)
 project(lunar-hunt)
 
 
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED true)
-
 file(GLOB_RECURSE LUNAR_SOURCES src/*.c src/*.h)
 
 find_package(Curses REQUIRED)
@@ -22,5 +19,5 @@ if(WIN32)
 endif()
 
 add_executable(lunar-hunt ${LUNAR_SOURCES})
-
+set_property(TARGET lunar-hunt PROPERTY C_STANDARD 17)
 
